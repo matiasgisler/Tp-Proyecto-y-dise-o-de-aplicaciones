@@ -2,7 +2,7 @@
 package matrices;
 import javax.swing.*;
 public class tp3_5 extends JFrame {
-private int ma,mi,num=mi+1;
+private int ma,mi,num;
     public tp3_5() {
         setTitle("3.5");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,12 +21,15 @@ private int ma,mi,num=mi+1;
                  ma = Integer.parseInt(max.getText());
                  mi = Integer.parseInt(min.getText());                
                 
-                resultadoLabel.setText("para terminar ingrese un numero que este dentro del raNGO");
-                while (num<=mi && num>=ma){
-                    num = Integer.parseInt(numero.getText());
-                    resultadoLabel.setText("ingrese un numero");
+                num = Integer.parseInt(numero.getText());
+                    
+                if (num>mi  && num<ma){
+                    
+                   resultadoLabel.setText("si esta dentro del rango. Chau");
+                } else{
+                    resultadoLabel.setText("no esta en el rango");
                 }
-                resultadoLabel.setText("si esta dentro del rango. CHAU");
+                
 
             } catch (NumberFormatException ex) {
                 resultadoLabel.setText("Entrada invÃ¡lida.");
